@@ -1,0 +1,115 @@
+{
+	"swagger": "2.0",
+	"info": {
+		"version": "1.0",
+		"title": "Rotan Swagger"
+	},
+	"basePath": "/telephone",
+	"x-a127-services": {
+		"regex-protection": {
+			"provider": "x-regex-protection",
+			"apply": {
+				"pipe": "request",
+				"endPoint": "proxy"
+			},
+			"options": {
+				"displayName": "Add Regex Protection",
+				"continueOnError": "true"
+			}
+		},
+		"raiseFault": {
+			"provider": "x-raiseFault",
+			"apply": {
+				"pipe": "request",
+				"endPoint": "proxy"
+			},
+			"options": {
+				"displayName": "Raise Regex Error",
+				"statusCode": 400,
+				"reasonPhrase": "Bad Request",
+				"continueOnError": "false"
+			}
+		},
+		"add-headers": {
+			"provider": "x-headers",
+			"apply": {
+				"pipe": "request",
+				"endPoint": "target"
+			},
+			"options": {
+				"displayName": "Add AWS token header",
+				"headers": {
+					"x-api-key": {
+						"type": "string",
+						"default": "",
+						"description": "Add AWS token header"
+					}
+				}
+			}
+		},
+		"add-cors": {
+			"provider": "x-cors",
+			"options": {
+				"displayName": "Add CORS",
+				"headers": {
+					"Access-Control-Allow-Origin": {
+						"type": "string",
+						"default": "*",
+						"description": "Setting this header to `*` allows all origins. This is handy for public REST APIs that don't require authentication. But, according to the HTTP spec, browsers *WILL NOT* send cookies if this header is `*`, regardless of what you set `Access-Control-Allow-Credentials` to.\n"
+					},
+					"Access-Control-Allow-Credentials": {
+						"type": "boolean",
+						"default": false,
+						"description": "Setting this header to `false` means that your API does not use authentication cookies.\n"
+					},
+					"Access-Control-Allow-Headers": {
+						"type": "array",
+						"collectionFormat": "csv",
+						"default": "origin, x-requested-with, accept",
+						"description": "This shows how you can explicitly specify which HTTP headers your API allows.\n"
+					},
+					"Access-Control-Allow-Methods": {
+						"type": "array",
+						"collectionFormat": "csv",
+						"default": "GET, PUT, POST, DELETE",
+						"description": "This shows how you can explicitly specify which HTTP methods your API allows.\n"
+					},
+					"Access-Control-Max-Age": {
+						"type": "integer",
+						"default": 3628800,
+						"description": "This allows client browsers to cache the CORS response for one day (3628800 seconds).  \n"
+					}
+				}
+			}
+		}
+	},
+	"path": {
+		"/telephone": {
+			"get": {
+				"responses": {
+					"200": {
+						"description": "200 response"
+					}
+				}
+			},
+			"post": {
+				"produces": [
+					"application/json"
+				],
+				"responses": {
+					"200": {
+						"description": "200 response",
+						"schema": {
+							"$ref": "#/definitions/Empty"
+						}
+					}
+				}
+			}
+		}
+	},
+	"definitions": {
+		"Empty": {
+			"type": "object"
+		}
+	}
+}

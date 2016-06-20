@@ -1,0 +1,24 @@
+{
+  "name": "rotan",
+  "version": "0.0.5",
+  "description": "bamboo test utils",
+  "dependencies": {
+    "commander": "2.9.0",
+    "concat-stream": "1.5.1",
+    "covert": "1.1.0",
+    "resolve": "1.1.7",
+    "swagger-parser": "3.4.1",
+    "tap-xunit": "1.4.0",
+    "tape": "4.5.1"
+  },
+  "bin": {
+    "rotan": "bin/rotan"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "tape test/*.js",
+    "coverage": "covert test/*.js"
+  },
+  "author": "Ronald Luitwieler",
+  "license": "ISC"
+}
