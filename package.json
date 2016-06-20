@@ -20,5 +20,23 @@
     "coverage": "covert test/*.js"
   },
   "author": "Ronald Luitwieler",
-  "license": "ISC"
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orangewise/rotan.git"
+  },
+  "keywords": [
+    "bamboo",
+    "tape",
+    "test",
+    "utils"
+  ],
+  "bugs": {
+    "url": "https://github.com/orangewise/rotan/issues"
+  },
+  "homepage": "https://github.com/orangewise/rotan#readme"
 }
