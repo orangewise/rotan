@@ -1,4 +1,3 @@
-
 exports.test = function (options) {
   var test = options.tape.createHarness();
   var stream = test.createStream();

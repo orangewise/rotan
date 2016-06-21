@@ -4,6 +4,23 @@ var program = require('commander');
 var pkg = require('../package.json');
 var output = require('../lib/output');
 var tape = require('tape');
+var fs = require('fs');
+var path = require('path');
+var readline = require('readline');
+
+var example = function () {
+  var rl = readline.createInterface({
+    input: fs.createReadStream(path.join(__dirname, '../test/js/example-tests.js'))
+  });
+
+  rl.on('line', function (line) {
+    console.log('   ', line);
+  });
+
+  rl.on('close', function () {
+    console.log('');
+  });
+};
 
 program
   .version(pkg.version);
@@ -26,7 +43,7 @@ program
   .usage('<command> <options>')
   .command('js <tests.js>')
   .option('-x, --xunit', 'Output xunit.')
-  .description('Run tape tests.')
+  .description('Run tape tests')
   .action(function (testFile, options) {
     console.log('js', testFile);
     var opts = options;
@@ -42,6 +59,9 @@ program.on('--help', function (){
   console.log('    $ rotan swagger swagger.json');
   console.log('    $ rotan js index.js');
   console.log('');
+  console.log('  Write your tape tests like this:');
+  console.log('');
+  example();
 });
 
 
