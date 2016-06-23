@@ -14,10 +14,12 @@
   "bin": {
     "rotan": "bin/rotan"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nyc": "6.6.1"
+  },
   "scripts": {
     "test": "tape test/*.js",
-    "coverage": "covert test/*.js"
+    "coverage": "nyc tape test/*.js"
   },
   "author": "Ronald Luitwieler",
   "license": "ISC",
