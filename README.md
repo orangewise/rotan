@@ -1,4 +1,9 @@
-# Rotan
+Rotan
+=====
+
+[![npm version][npm-badge]][npm-url]
+[![Build Status][travis-badge]][travis-url]
+
 
 Utility for testing your artifacts in Bamboo, using [tape](https://www.npmjs.com/package/tape).
 
@@ -40,3 +45,9 @@ exports.test = function (options) {
   return stream;
 };
 ```
+
+
+[npm-badge]: https://badge.fury.io/js/rotan.svg
+[npm-url]: https://badge.fury.io/js/rotan
+[travis-badge]: https://travis-ci.org/orangewise/rotan.svg?branch=master
+[travis-url]: https://travis-ci.org/orangewise/rotan
