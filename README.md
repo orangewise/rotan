@@ -51,3 +51,5 @@ exports.test = function (options) {
 [npm-url]: https://badge.fury.io/js/rotan
 [travis-badge]: https://travis-ci.org/orangewise/rotan.svg?branch=master
 [travis-url]: https://travis-ci.org/orangewise/rotan
+[coveralls-badge]: https://coveralls.io/repos/github/orangewise/rotan/badge.svg?branch=master
+[coveralls-url]: https://coveralls.io/github/orangewise/rotan?branch=master
