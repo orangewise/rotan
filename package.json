@@ -15,11 +15,12 @@
     "rotan": "bin/rotan"
   },
   "devDependencies": {
+    "coveralls": "2.11.9",
     "nyc": "6.6.1"
   },
   "scripts": {
     "test": "nyc tape test/*.js",
-    "coverage": "nyc --reporter=lcov tape test/*.js"
+    "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "author": "Ronald Luitwieler",
   "license": "ISC",
