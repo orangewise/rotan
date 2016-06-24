@@ -3,7 +3,7 @@ Rotan
 
 [![npm version][npm-badge]][npm-url]
 [![Build Status][travis-badge]][travis-url]
-
+[![Coverage Status][coveralls-badge]][coveralls-url]
 
 Utility for testing your artifacts in Bamboo, using [tape](https://www.npmjs.com/package/tape).
 
