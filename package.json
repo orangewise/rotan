@@ -18,8 +18,8 @@
     "nyc": "6.6.1"
   },
   "scripts": {
-    "test": "tape test/*.js",
-    "coverage": "nyc tape test/*.js"
+    "test": "nyc tape test/*.js",
+    "coverage": "nyc --reporter=lcov tape test/*.js"
   },
   "author": "Ronald Luitwieler",
   "license": "ISC",
