@@ -42,9 +42,7 @@ test('JSON schema tests should output valid tap & xunit output', function (t) {
           body,
           'TAP version 13\n'
           + '# Structure of JSON should conform to the schema\n'
-          + 'not ok 1 JSON is NOT conform the schema\n'
-          + '  ---\n'
-          + '    operator: fail\n'
+          + 'not ok 1 JSON is NOT conform the schema { [z-schema validation er'
         , 'Valid tap output for swagger file');
     }));
 
