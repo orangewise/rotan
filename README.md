@@ -18,13 +18,13 @@ npm install rotan
 tap output:
 
 ```
-rotan swagger swagger.json
+rotan openapi openapi-definition.json
 ```
 
 xunit reporting:
 
 ```
-rotan swagger swagger.json -x
+rotan openapi openapi-definition.json -x
 ```
 
 
