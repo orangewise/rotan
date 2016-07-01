@@ -1,6 +1,6 @@
 {
   "name": "rotan",
-  "version": "0.0.8",
+  "version": "1.0.0",
   "description": "bamboo test utils",
   "dependencies": {
     "commander": "2.9.0",
