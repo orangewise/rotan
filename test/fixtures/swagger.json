@@ -86,6 +86,15 @@
 	"paths": {
 		"/telephone": {
 			"get": {
+				"parameters": [
+          {
+            "name": "postalCode",
+            "in": "query",
+            "required": true,
+            "type": "string",
+            "pattern": "/^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-z]{2}$/i"
+          }
+				],
 				"responses": {
 					"200": {
 						"description": "200 response"

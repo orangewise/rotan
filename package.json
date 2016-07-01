@@ -9,7 +9,8 @@
     "resolve": "1.1.7",
     "swagger-parser": "3.4.1",
     "tap-xunit": "1.4.0",
-    "tape": "4.5.1"
+    "tape": "4.5.1",
+    "z-schema": "3.17.0"
   },
   "bin": {
     "rotan": "bin/rotan"
@@ -36,7 +37,9 @@
     "bamboo",
     "tape",
     "test",
-    "utils"
+    "utils",
+    "swagger",
+    "openapi"
   ],
   "bugs": {
     "url": "https://github.com/orangewise/rotan/issues"

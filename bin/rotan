@@ -27,15 +27,28 @@ program
 
 program
   .usage('<command> <options>')
-  .command('swagger <swagger.json>')
-  .option('-v, --validate', 'Validate swagger file.')
+  .command('openapi <openapi.json>')
+  .option('-v, --validate', 'Validate OpenAPI file (is it a valid ) .')
   .option('-x, --xunit', 'Output xunit.')
-  .description('Swagger utils.')
+  .description('OpenAPI utils.')
   .action(function (swaggerFile, options) {
     var opts = options;
     opts.tape = tape;
     opts.testFile = './swagger-tests.js';
     opts.swaggerFile = swaggerFile;
+    output.action(opts).pipe(process.stdout);
+  });
+
+program
+  .usage('<command> <options>')
+  .command('json <schema.json> <test.json>')
+  .option('-x, --xunit', 'Output xunit.')
+  .description('JSON validation.')
+  .action(function (schemaFile, jsonFile, options) {
+    var opts = options;
+    opts.tape = tape;
+    opts.schemaFile = schemaFile;
+    opts.jsonFile = jsonFile;
     output.action(opts).pipe(process.stdout);
   });
 
@@ -56,7 +69,7 @@ program
 program.on('--help', function (){
   console.log('  Examples:');
   console.log('');
-  console.log('    $ rotan swagger swagger.json');
+  console.log('    $ rotan openapi openapi.json');
   console.log('    $ rotan js index.js');
   console.log('');
   console.log('  Write your tape tests like this:');
