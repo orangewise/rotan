@@ -39,7 +39,9 @@
     "test",
     "utils",
     "swagger",
-    "openapi"
+    "openapi",
+    "xunit",
+    "junit"
   ],
   "bugs": {
     "url": "https://github.com/orangewise/rotan/issues"

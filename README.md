@@ -5,7 +5,7 @@ rotan
 [![Build Status][travis-badge]][travis-url]
 [![Coverage Status][coveralls-badge]][coveralls-url]
 
-Rotan is a small command line utility to easily test your artifacts in Bamboo. It can output tap or xunit reports.
+Rotan is a small command line utility to easily test your artifacts (in Bamboo :). It can output tap or xunit reports.
 
 Currently you can do the following:
 
