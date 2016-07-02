@@ -6,20 +6,9 @@ var output = require('../lib/output');
 var tape = require('tape');
 var fs = require('fs');
 var path = require('path');
-var readline = require('readline');
 
 var example = function () {
-  var rl = readline.createInterface({
-    input: fs.createReadStream(path.join(__dirname, '../test/js/example-tests.js'))
-  });
-
-  rl.on('line', function (line) {
-    console.log('   ', line);
-  });
-
-  rl.on('close', function () {
-    console.log('');
-  });
+  return fs.readFileSync(path.join(__dirname, '../test/js/example-tests.js'), 'utf8');
 };
 
 program
@@ -28,7 +17,6 @@ program
 program
   .usage('<command> <options>')
   .command('openapi <openapi.json>')
-  .option('-v, --validate', 'Validate OpenAPI file (is it a valid ) .')
   .option('-x, --xunit', 'Output xunit.')
   .description('OpenAPI utils.')
   .action(function (swaggerFile, options) {
@@ -63,18 +51,22 @@ program
     opts.tape = tape;
     opts.testFile = testFile;
     output.action(opts).pipe(process.stdout);
+  })
+  .on('--help', function () {
+    console.log('');
+    console.log('  Write your tape tests like this:');
+    console.log('');
+    console.log(example());
   });
 
 
-program.on('--help', function (){
+program.on('--help', function () {
   console.log('  Examples:');
   console.log('');
-  console.log('    $ rotan openapi openapi.json');
-  console.log('    $ rotan js index.js');
+  console.log('    $ rotan openapi <openapi.json>');
+  console.log('    $ rotan json <schema.json> <openapi.json>');
+  console.log('    $ rotan js <tape-test.js>');
   console.log('');
-  console.log('  Write your tape tests like this:');
-  console.log('');
-  example();
 });
 
 

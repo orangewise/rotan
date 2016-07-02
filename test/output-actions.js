@@ -19,7 +19,7 @@ test('JSON schema tests should output valid tap & xunit output', function (t) {
           body,
           'TAP version 13\n'
           + '# Structure of JSON should conform to the schema\n'
-          + 'ok 1 JSON is conform to schema\n'
+          + 'ok 1 JSON is conform schema\n'
           + '\n'
           + '1..1\n'
           + '# tests 1\n'
