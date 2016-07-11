@@ -1,0 +1,47 @@
+{
+  "title": "A JSON Schema for Swagger 2.0 API.",
+  "properties": {
+    "x-a127-services": {
+      "type": "object",
+      "properties": {
+        "regex-protection": {
+          "type": "object"
+        },
+        "raiseFault": {
+          "type": "object"
+        }
+      },
+      "required": ["regex-protection", "raiseFault", "add-headers", "add-cors"]
+    },
+    "paths": {
+      "type": "object",
+      "patternProperties": {
+        "^/" : {
+          "type": "object",
+          "properties": {
+            "get": {
+              "type": "object",
+              "properties": {
+                "parameters": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "name": {},
+                      "required": {},
+                      "pattern": {}
+                    },
+                    "required": ["name", "in", "required", "type", "pattern"]
+                  }
+                }
+              },
+              "required": ["parameters"]
+            }
+          },
+          "required": ["get"]
+        }
+      }
+    }
+  },
+  "required": ["swagger", "info", "x-a127-services", "paths"]
+},
