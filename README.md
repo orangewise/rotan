@@ -68,11 +68,13 @@ rotan json schema.json swagger.json
 
 TAP version 13
 # Structure of JSON should conform to the schema
-ok 1 JSON is conform schema
+ok 1 swagger.json is valid JSON
+ok 2 schema.json is valid JSON
+ok 3 swagger.json is conform schema.json
 
-1..1
-# tests 1
-# pass  1
+1..3
+# tests 3
+# pass  3
 
 # ok
 ```
@@ -82,8 +84,10 @@ rotan json schema.json swagger.json -x
 
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="Structure of JSON should conform to the schema" tests="1" failures="0" errors="0">
-    <testcase name="#1 JSON is conform schema"/>
+  <testsuite name="Structure of JSON should conform to the schema" tests="3" failures="0" errors="0">
+    <testcase name="#1 swagger.json is valid JSON"/>
+    <testcase name="#2 schema.json is valid JSON"/>
+    <testcase name="#3 swagger.json is conform schema.json"/>
   </testsuite>
 </testsuites>
 ```
