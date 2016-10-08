@@ -30,7 +30,8 @@ test('JSON schema tests should output valid tap & xunit output', function (t) {
           + '# ok\n'
         , 'Valid tap output for swagger file');
     }));
-  // yaml test
+
+  // input can also be yaml
   output
     .action({
       testFile: './lib/json-tests',
@@ -56,6 +57,7 @@ test('JSON schema tests should output valid tap & xunit output', function (t) {
           + '# ok\n'
         , 'Valid tap output for swagger file');
     }));
+
   // Test invalid json input (jsonFile)
   output
     .action({
@@ -74,6 +76,7 @@ test('JSON schema tests should output valid tap & xunit output', function (t) {
           + 'not ok 1 ./test/fixtures/swagger-invalid-json.json is NOT valid\n'
         , 'Valid tap output for swagger file');
     }));
+
   // Test invalid json input (schemaFile)
   output
     .action({
@@ -192,7 +195,12 @@ test('Swagger & JS tests should output valid tap & xunit output', function (t) {
 test('Invalid swagger should trigger a fail', function (t) {
 
   output
-    .action({ testFile: './lib/swagger-tests', swaggerFile: './test/fixtures/swagger-invalid.json', xunit: false, tape: test })
+    .action({
+      testFile: './lib/swagger-tests',
+      swaggerFile: './test/fixtures/swagger-invalid.json',
+      xunit: false,
+      tape: test
+    })
     .pipe(concat(function (r) {
       var body = r.toString('utf8');
       t.equal(body.match(/is not a valid Swagger API definition/)[0], 'is not a valid Swagger API definition');
