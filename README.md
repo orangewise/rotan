@@ -10,7 +10,7 @@ Rotan is a small command line utility to easily test your artifacts (in Bamboo :
 Currently you can do the following:
 
   - test if your [OpenAPI](https://openapis.org) or [Swagger](http://swagger.io) files are valid
-  - test if your JSON is conform a [JSON schema](http://json-schema.org)  
+  - test if your JSON/YAML is conform a [JSON schema](http://json-schema.org)  
   - run a custom tape test
 
 
@@ -61,14 +61,14 @@ rotan openapi openapi-definition.json -x
 </testsuites>
 ```
 
-## Validate a JSON file with a JSON schema
+## Validate a JSON/YAML file with a JSON schema
 
 ```
 rotan json schema.json swagger.json
 
 TAP version 13
-# Structure of JSON should conform to the schema
-ok 1 swagger.json is valid JSON
+# Structure of input file should conform to the schema
+ok 1 swagger.json is valid
 ok 2 schema.json is valid JSON
 ok 3 swagger.json is conform schema.json
 
@@ -84,8 +84,8 @@ rotan json schema.json swagger.json -x
 
 <?xml version="1.0"?>
 <testsuites>
-  <testsuite name="Structure of JSON should conform to the schema" tests="3" failures="0" errors="0">
-    <testcase name="#1 swagger.json is valid JSON"/>
+  <testsuite name="Structure of iput file should conform to the schema" tests="3" failures="0" errors="0">
+    <testcase name="#1 swagger.json is valid"/>
     <testcase name="#2 schema.json is valid JSON"/>
     <testcase name="#3 swagger.json is conform schema.json"/>
   </testsuite>

@@ -40,6 +40,9 @@
     "utils",
     "swagger",
     "openapi",
+    "yaml",
+    "json",
+    "schema",
     "xunit",
     "junit"
   ],

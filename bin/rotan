@@ -29,9 +29,9 @@ program
 
 program
   .usage('<command> <options>')
-  .command('json <schema.json> <test.json>')
+  .command('json <schema.json> <input.json or input.yaml>')
   .option('-x, --xunit', 'Output xunit.')
-  .description('JSON validation.')
+  .description('Validate if input file conforms to JSON schema.')
   .action(function (schemaFile, jsonFile, options) {
     var opts = options;
     opts.tape = tape;
@@ -64,7 +64,7 @@ program.on('--help', function () {
   console.log('  Examples:');
   console.log('');
   console.log('    $ rotan openapi <openapi.json>');
-  console.log('    $ rotan json <schema.json> <openapi.json>');
+  console.log('    $ rotan json <schema.json> <input.json or input.yaml>');
   console.log('    $ rotan js <tape-test.js>');
   console.log('');
 });
