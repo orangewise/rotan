@@ -4,20 +4,20 @@
   "description": "bamboo test utils",
   "dependencies": {
     "commander": "2.9.0",
-    "concat-stream": "1.5.1",
+    "concat-stream": "^1.5.2",
     "json-schema-ref-parser": "^3.1.2",
     "resolve": "1.1.7",
     "swagger-parser": "3.4.1",
     "tap-xunit": "1.4.0",
-    "tape": "4.5.1",
-    "z-schema": "3.17.0"
+    "tape": "^4.6.2",
+    "z-schema": "^3.18.0"
   },
   "bin": {
     "rotan": "bin/rotan"
   },
   "devDependencies": {
-    "coveralls": "2.11.9",
-    "nyc": "6.6.1"
+    "coveralls": "^2.11.14",
+    "nyc": "^8.3.1"
   },
   "scripts": {
     "test": "nyc tape test/*.js",
