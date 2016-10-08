@@ -1,0 +1,29 @@
+---
+swagger: '2.0'
+info:
+  version: '1.0'
+  title: Rotan Swagger
+basePath: "/telephone"
+paths:
+  "/telephone":
+    get:
+      parameters:
+      - name: postalCode
+        in: query
+        required: true
+        type: string
+        pattern: "/^[1-9][0-9]{3} ?(?!sa|sd|ss)[a-z]{2}$/i"
+      responses:
+        '200':
+          description: 200 response
+    post:
+      produces:
+      - application/json
+      responses:
+        '200':
+          description: 200 response
+          schema:
+            "$ref": "#/definitions/Empty"
+definitions:
+  Empty:
+    type: object

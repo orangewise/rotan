@@ -1,0 +1,34 @@
+{
+    "x-a127-services": {
+      "add-cors": {
+        "provider": "x-cors",
+        "options": {
+          "displayName": "Add CORS",
+          "headers": {
+            "Access-Control-Allow-Origin": {
+              "type": "string",
+              "default": "*"
+            },
+            "Access-Control-Allow-Credentials": {
+              "type": "boolean",
+              "default": false
+            },
+            "Access-Control-Allow-Headers": {
+              "type": "array",
+              "collectionFormat": "csv",
+              "default": "origin, x-requested-with, accept"
+            },
+            "Access-Control-Allow-Methods": {
+              "type": "array",
+              "collectionFormat": "csv",
+              "default": "GET, PUT, POST, DELETE"
+            },
+            "Access-Control-Max-Age": {
+              "type": "integer",
+              "default": 3628800
+            }
+          }
+        }
+      }
+    }
+  }
