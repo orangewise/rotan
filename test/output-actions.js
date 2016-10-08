@@ -122,8 +122,14 @@ test('JSON schema tests should output valid tap & xunit output', function (t) {
 
 test('Swagger & JS tests should output valid tap & xunit output', function (t) {
 
+  // Test swagger file in json format
   output
-    .action({ testFile: './lib/swagger-tests', swaggerFile: './test/fixtures/swagger.json', xunit: false, tape: test })
+    .action({
+      testFile: './lib/swagger-tests',
+      swaggerFile: './test/fixtures/swagger.json',
+      xunit: false,
+      tape: test
+    })
     .pipe(concat(function (r) {
       var body = r.toString('utf8');
       t.equal(
@@ -140,8 +146,37 @@ test('Swagger & JS tests should output valid tap & xunit output', function (t) {
         , 'Valid tap output for swagger file');
     }));
 
+  // Test swagger file in yaml format
   output
-    .action({ testFile: './lib/swagger-tests', swaggerFile: './test/fixtures/swagger.json', xunit: true, tape: test })
+    .action({
+      testFile: './lib/swagger-tests',
+      swaggerFile: './test/fixtures/swagger.yaml',
+      xunit: false,
+      tape: test
+    })
+    .pipe(concat(function (r) {
+      var body = r.toString('utf8');
+      t.equal(
+          body,
+          'TAP version 13\n'
+          + '# Parse file ./test/fixtures/swagger.yaml\n'
+          + 'ok 1 Valid swagger file\n'
+          + '\n'
+          + '1..1\n'
+          + '# tests 1\n'
+          + '# pass  1\n'
+          + '\n'
+          + '# ok\n'
+        , 'Valid tap output for swagger file');
+    }));
+
+  output
+    .action({
+      testFile: './lib/swagger-tests',
+      swaggerFile: './test/fixtures/swagger.json',
+      xunit: true,
+      tape: test
+    })
     .pipe(concat(function (r) {
       var body = r.toString('utf8');
       t.equal(
@@ -174,7 +209,11 @@ test('Swagger & JS tests should output valid tap & xunit output', function (t) {
     }));
 
   output
-    .action({ testFile: './test/js/example-tests', xunit: true,  tape: test })
+    .action({
+      testFile: './test/js/example-tests',
+      xunit: true,
+      tape: test
+    })
     .pipe(concat(function (r) {
       var body = r.toString('utf8');
       t.equal(
@@ -193,11 +232,24 @@ test('Swagger & JS tests should output valid tap & xunit output', function (t) {
 
 
 test('Invalid swagger should trigger a fail', function (t) {
-
+  // json input
   output
     .action({
       testFile: './lib/swagger-tests',
       swaggerFile: './test/fixtures/swagger-invalid.json',
+      xunit: false,
+      tape: test
+    })
+    .pipe(concat(function (r) {
+      var body = r.toString('utf8');
+      t.equal(body.match(/is not a valid Swagger API definition/)[0], 'is not a valid Swagger API definition');
+    }));
+
+  // yaml input
+  output
+    .action({
+      testFile: './lib/swagger-tests',
+      swaggerFile: './test/fixtures/swagger-invalid.yaml',
       xunit: false,
       tape: test
     })
