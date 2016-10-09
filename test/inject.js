@@ -1,6 +1,7 @@
 var test = require('tape');
 var inject = require('../lib/inject.js');
 var cors = require('./fixtures/cors.json');
+var swaggerParser = require('swagger-parser');
 
 test('inject array of json object', function (t) {
   var injected = inject.array([ { a: 'b' }, { b: 'c' }]);
@@ -14,6 +15,23 @@ test('return folder as array', function (t) {
     t.equal(r.length, 1, 'array should have 1 element');
     t.deepEqual(r[0], cors, 'first element equals cors.json');
     t.end();
+  });
+});
+
+test('openapi is still valid after injection', function (t) {
+
+  inject.readFiles('./test/fixtures/inject/*.yaml', function (e, injectJson) {
+    inject.fileContents('./test/fixtures/swagger-base.yaml', function (e, api) {
+      // Add api to injectJson
+      injectJson.push(api);
+      var merged = inject.array(injectJson);
+      swaggerParser
+        .validate(merged)
+        .then(function () {
+          t.pass('Valid openapi file');
+          t.end();
+        });
+    });
   });
 });
 
