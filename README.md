@@ -92,6 +92,23 @@ rotan json schema.json swagger.json -x
 </testsuites>
 ```
 
+```
+# inject snippets into your openapi before validating
+rotan json schema.json swagger.yaml -i 'snippets/*.yaml'
+TAP version 13
+# Structure of input file should conform to the schema
+ok 1 swagger.yaml is valid
+ok 2 schema.json is valid JSON
+ok 3 swagger.yaml is conform schema.json
+
+1..3
+# tests 3
+# pass  3
+
+# ok
+```
+
+
 
 ## Custom tape test
 
