@@ -20,7 +20,6 @@ test('return folder as array', function (t) {
 });
 
 test('openapi is still valid after injection', function (t) {
-
   inject.readFiles('./test/fixtures/inject/*.yaml', function (e, injectJson) {
     util.fileContents('./test/fixtures/swagger-base.yaml', function (e, api) {
       // Add api to injectJson
@@ -37,5 +36,8 @@ test('openapi is still valid after injection', function (t) {
 });
 
 test('inject cors into swagger', function (t) {
-  t.end();
+  inject.snippets({ }, { inject: './test/fixtures/inject/*.yaml' }, function (e, injected) {
+    t.deepEqual(injected, cors, 'noooo');
+    t.end();
+  });
 });

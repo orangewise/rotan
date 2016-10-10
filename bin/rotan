@@ -29,8 +29,9 @@ program
 
 program
   .usage('<command> <options>')
-  .command('json <schema.json> <input.json or input.yaml>')
+  .command('json <schema.json> <input.json/yaml>')
   .option('-x, --xunit', 'Output xunit.')
+  .option('-i, --inject <path>', 'Inject yaml/json snippets from <path> before validation.')
   .description('Validate if input file conforms to JSON schema.')
   .action(function (schemaFile, jsonFile, options) {
     var opts = options;
@@ -63,9 +64,10 @@ program
 program.on('--help', function () {
   console.log('  Examples:');
   console.log('');
-  console.log('    $ rotan openapi <openapi.json>');
-  console.log('    $ rotan json <schema.json> <input.json or input.yaml>');
-  console.log('    $ rotan js <tape-test.js>');
+  console.log('    $ rotan openapi api.json');
+  console.log('    $ rotan json schema.json input.json');
+  console.log('    $ rotan json schema.json input.yaml -i \'snippets/*.yaml\'');
+  console.log('    $ rotan js tape-test.js');
   console.log('');
 });
 
