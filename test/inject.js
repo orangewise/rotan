@@ -35,9 +35,16 @@ test('openapi is still valid after injection', function (t) {
   });
 });
 
-test('inject cors into swagger', function (t) {
-  inject.snippets({ }, { inject: './test/fixtures/inject/*.yaml' }, function (e, injected) {
-    t.deepEqual(injected, cors, 'noooo');
+test('inject cors into empty object', function (t) {
+  inject.snippets({}, { inject: './test/fixtures/inject/*.yaml' }, function (e, injected) {
+    t.deepEqual(injected, cors, 'cors is injected into empty object');
+    t.end();
+  });
+});
+
+test('inject nothing into cors', function (t) {
+  inject.snippets(cors, {}, function (e, injected) {
+    t.deepEqual(injected, cors, 'cors is equal to injected');
     t.end();
   });
 });
