@@ -4,6 +4,7 @@ rotan
 [![npm version][npm-badge]][npm-url]
 [![Build Status][travis-badge]][travis-url]
 [![Coverage Status][coveralls-badge]][coveralls-url]
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 Rotan is a small command line utility to easily test your artifacts (in Bamboo :). It can output tap or xunit reports.
 
@@ -117,16 +118,16 @@ Create your [tape](https://www.npmjs.com/package/tape) tests like this:
 ```
 // tests.js
 exports.test = function (options) {
-  var test = options.tape.createHarness();
-  var stream = test.createStream();
+  var test = options.tape.createHarness()
+  var stream = test.createStream()
 
   test('it should return ok', function (t) {
-    t.plan(1);
-    t.ok(true, 'looking good');
-  });
+    t.plan(1)
+    t.ok(true, 'looking good')
+  })
 
-  return stream;
-};
+  return stream
+}
 ```
 
 Then run it like this:

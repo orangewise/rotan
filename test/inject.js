@@ -56,7 +56,3 @@ test('inject nothing into cors', function (t) {
   })
 })
 
-// test('inject cors into openapi and save file', function (t) {
-//   t.fail('TODO');
-//   t.end();
-// });
