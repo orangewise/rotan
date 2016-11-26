@@ -20,10 +20,11 @@
   },
   "devDependencies": {
     "coveralls": "^2.11.14",
-    "nyc": "^8.3.1"
+    "nyc": "^8.3.1",
+    "standard": "^8.6.0"
   },
   "scripts": {
-    "test": "nyc tape test/*.js",
+    "test": "standard && nyc tape test/*.js",
     "coverage": "nyc report --reporter=text-lcov | coveralls"
   },
   "author": "Ronald Luitwieler",
