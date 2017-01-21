@@ -105,14 +105,14 @@ test('JSON schema tests should output valid tap & xunit output', function (t) {
       tape: test
     })
     .pipe(concat(function (r) {
-      var body = r.toString('utf8').substr(0, 280)
+      var body = r.toString('utf8').substr(0, 257)
       t.equal(
           body,
           'TAP version 13\n' +
           '# Structure of input file should conform to the schema\n' +
           'ok 1 ./test/fixtures/swagger-invalid.json is valid\n' +
           'ok 2 ./test/fixtures/schema.json is valid JSON\n' +
-          'not ok 3 ./test/fixtures/swagger-invalid.json is NOT conform ./test/fixtures/schema.json: { [z-schema validation'
+          'not ok 3 ./test/fixtures/swagger-invalid.json is NOT conform ./test/fixtures/schema.json:'
         , 'Invalid tap output for swagger file')
     }))
 
