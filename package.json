@@ -4,7 +4,7 @@
   "description": "bamboo test utils",
   "dependencies": {
     "commander": "2.9.0",
-    "concat-stream": "^1.5.2",
+    "concat-stream": "^1.6.0",
     "glob": "^7.1.1",
     "json-schema-ref-parser": "^3.1.2",
     "lodash.merge": "^4.6.0",
