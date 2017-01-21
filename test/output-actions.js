@@ -181,7 +181,7 @@ test('Swagger & JS tests should output valid tap & xunit output', function (t) {
           body,
           '<?xml version="1.0"?>\n' +
           '<testsuites>\n' +
-          '  <testsuite name="Parse file ./test/fixtures/swagger.json" tests="1" failures="0" errors="0">\n' +
+          '  <testsuite tests="1" failures="0" errors="0" name="Parse file ./test/fixtures/swagger.json">\n' +
           '    <testcase name="#1 Valid swagger file"/>\n' +
           '  </testsuite>\n' +
           '</testsuites>\n'
@@ -218,7 +218,7 @@ test('Swagger & JS tests should output valid tap & xunit output', function (t) {
           body,
             '<?xml version="1.0"?>\n' +
             '<testsuites>\n' +
-            '  <testsuite name="it should return ok" tests="1" failures="0" errors="0">\n' +
+            '  <testsuite tests="1" failures="0" errors="0" name="it should return ok">\n' +
             '    <testcase name="#1 looking good"/>\n' +
             '  </testsuite>\n' +
             '</testsuites>\n'

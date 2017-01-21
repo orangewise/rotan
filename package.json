@@ -8,10 +8,10 @@
     "glob": "^7.1.1",
     "json-schema-ref-parser": "^3.1.2",
     "lodash.merge": "^4.6.0",
-    "resolve": "1.2.0",
+    "resolve": "^1.1.7",
     "sort-object": "^3.0.2",
     "swagger-parser": "3.4.1",
-    "tap-xunit": "1.4.0",
+    "tap-xunit": "^1.7.0",
     "tape": "^4.6.3",
     "z-schema": "^3.18.2"
   },
