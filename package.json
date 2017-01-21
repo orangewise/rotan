@@ -12,15 +12,15 @@
     "sort-object": "^3.0.2",
     "swagger-parser": "3.4.1",
     "tap-xunit": "1.4.0",
-    "tape": "^4.6.2",
-    "z-schema": "^3.18.0"
+    "tape": "^4.6.3",
+    "z-schema": "^3.18.2"
   },
   "bin": {
     "rotan": "bin/rotan"
   },
   "devDependencies": {
-    "coveralls": "^2.11.14",
-    "nyc": "^8.3.1",
+    "coveralls": "^2.11.15",
+    "nyc": "^10.1.2",
     "standard": "^8.6.0"
   },
   "scripts": {
