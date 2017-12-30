@@ -55,4 +55,3 @@ test('inject nothing into cors', function (t) {
     t.end()
   })
 })
-
