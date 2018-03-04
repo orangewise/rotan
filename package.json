@@ -3,15 +3,15 @@
   "version": "1.1.11",
   "description": "bamboo test utils",
   "dependencies": {
-    "commander": "^2.12.2",
-    "concat-stream": "^1.6.0",
+    "commander": "^2.14.1",
+    "concat-stream": "^1.6.1",
     "glob": "^7.1.2",
-    "json-schema-ref-parser": "^4.0.4",
-    "lodash.merge": "^4.6.0",
-    "swagger-parser": "^4.0.1",
-    "tape": "^4.8.0",
+    "json-schema-ref-parser": "^4.1.1",
+    "lodash.merge": "^4.6.1",
+    "swagger-parser": "^4.0.2",
     "tap-xunit": "^2.2.0",
-    "z-schema": "^3.19.0"
+    "tape": "^4.9.0",
+    "z-schema": "^3.19.1"
   },
   "bin": {
     "rotan": "bin/rotan"
@@ -19,7 +19,7 @@
   "devDependencies": {
     "coveralls": "^3.0.0",
     "nyc": "^11.4.1",
-    "standard": "^10.0.3"
+    "standard": "^11.0.0"
   },
   "scripts": {
     "test": "standard && nyc tape test/*.js",
