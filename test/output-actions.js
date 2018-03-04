@@ -15,19 +15,19 @@ test('JSON schema tests should output valid tap & xunit output', function (t) {
     .pipe(concat(function (r) {
       var body = r.toString('utf8')
       t.equal(
-          body,
-          'TAP version 13\n' +
-          '# Structure of input file should conform to the schema\n' +
-          'ok 1 ./test/fixtures/swagger.json is valid\n' +
-          'ok 2 ./test/fixtures/schema.json is valid JSON\n' +
-          'ok 3 ./test/fixtures/swagger.json is conform ./test/fixtures/schema.json\n' +
-          '\n' +
-          '1..3\n' +
-          '# tests 3\n' +
-          '# pass  3\n' +
-          '\n' +
-          '# ok\n'
-        , 'Valid tap output for swagger file')
+        body,
+        'TAP version 13\n' +
+        '# Structure of input file should conform to the schema\n' +
+        'ok 1 ./test/fixtures/swagger.json is valid\n' +
+        'ok 2 ./test/fixtures/schema.json is valid JSON\n' +
+        'ok 3 ./test/fixtures/swagger.json is conform ./test/fixtures/schema.json\n' +
+        '\n' +
+        '1..3\n' +
+        '# tests 3\n' +
+        '# pass  3\n' +
+        '\n' +
+        '# ok\n',
+        'Valid tap output for swagger file')
     }))
 
   // input can also be yaml
@@ -42,19 +42,19 @@ test('JSON schema tests should output valid tap & xunit output', function (t) {
     .pipe(concat(function (r) {
       var body = r.toString('utf8')
       t.equal(
-          body,
-          'TAP version 13\n' +
-          '# Structure of input file should conform to the schema\n' +
-          'ok 1 ./test/fixtures/swagger.yaml is valid\n' +
-          'ok 2 ./test/fixtures/schema.json is valid JSON\n' +
-          'ok 3 ./test/fixtures/swagger.yaml is conform ./test/fixtures/schema.json\n' +
-          '\n' +
-          '1..3\n' +
-          '# tests 3\n' +
-          '# pass  3\n' +
-          '\n' +
-          '# ok\n'
-        , 'Valid tap output for swagger file')
+        body,
+        'TAP version 13\n' +
+        '# Structure of input file should conform to the schema\n' +
+        'ok 1 ./test/fixtures/swagger.yaml is valid\n' +
+        'ok 2 ./test/fixtures/schema.json is valid JSON\n' +
+        'ok 3 ./test/fixtures/swagger.yaml is conform ./test/fixtures/schema.json\n' +
+        '\n' +
+        '1..3\n' +
+        '# tests 3\n' +
+        '# pass  3\n' +
+        '\n' +
+        '# ok\n',
+        'Valid tap output for swagger file')
     }))
 
   // Test invalid json input (jsonFile)
@@ -69,11 +69,11 @@ test('JSON schema tests should output valid tap & xunit output', function (t) {
     .pipe(concat(function (r) {
       var body = r.toString('utf8').substr(0, 133)
       t.equal(
-          body,
-          'TAP version 13\n' +
-          '# Structure of input file should conform to the schema\n' +
-          'not ok 1 ./test/fixtures/swagger-invalid-json.json is NOT valid\n'
-        , 'Valid tap output for swagger file')
+        body,
+        'TAP version 13\n' +
+        '# Structure of input file should conform to the schema\n' +
+        'not ok 1 ./test/fixtures/swagger-invalid-json.json is NOT valid\n',
+        'Valid tap output for swagger file')
     }))
 
   // Test invalid json input (schemaFile)
@@ -88,12 +88,12 @@ test('JSON schema tests should output valid tap & xunit output', function (t) {
     .pipe(concat(function (r) {
       var body = r.toString('utf8').substr(0, 175)
       t.equal(
-          body,
-          'TAP version 13\n' +
-          '# Structure of input file should conform to the schema\n' +
-          'ok 1 ./test/fixtures/swagger.json is valid\n' +
-          'not ok 2 ./test/fixtures/schema-invalid.json is NOT valid JSON\n'
-        , 'Valid tap output for swagger file')
+        body,
+        'TAP version 13\n' +
+        '# Structure of input file should conform to the schema\n' +
+        'ok 1 ./test/fixtures/swagger.json is valid\n' +
+        'not ok 2 ./test/fixtures/schema-invalid.json is NOT valid JSON\n',
+        'Valid tap output for swagger file')
     }))
 
   output
@@ -107,13 +107,13 @@ test('JSON schema tests should output valid tap & xunit output', function (t) {
     .pipe(concat(function (r) {
       var body = r.toString('utf8').substr(0, 257)
       t.equal(
-          body,
-          'TAP version 13\n' +
-          '# Structure of input file should conform to the schema\n' +
-          'ok 1 ./test/fixtures/swagger-invalid.json is valid\n' +
-          'ok 2 ./test/fixtures/schema.json is valid JSON\n' +
-          'not ok 3 ./test/fixtures/swagger-invalid.json is NOT conform ./test/fixtures/schema.json:'
-        , 'Invalid tap output for swagger file')
+        body,
+        'TAP version 13\n' +
+        '# Structure of input file should conform to the schema\n' +
+        'ok 1 ./test/fixtures/swagger-invalid.json is valid\n' +
+        'ok 2 ./test/fixtures/schema.json is valid JSON\n' +
+        'not ok 3 ./test/fixtures/swagger-invalid.json is NOT conform ./test/fixtures/schema.json:',
+        'Invalid tap output for swagger file')
     }))
 
   t.end()
@@ -131,17 +131,17 @@ test('Swagger & JS tests should output valid tap & xunit output', function (t) {
     .pipe(concat(function (r) {
       var body = r.toString('utf8')
       t.equal(
-          body,
-          'TAP version 13\n' +
-          '# Parse file ./test/fixtures/swagger.json\n' +
-          'ok 1 Valid swagger file\n' +
-          '\n' +
-          '1..1\n' +
-          '# tests 1\n' +
-          '# pass  1\n' +
-          '\n' +
-          '# ok\n'
-        , 'Valid tap output for swagger file')
+        body,
+        'TAP version 13\n' +
+        '# Parse file ./test/fixtures/swagger.json\n' +
+        'ok 1 Valid swagger file\n' +
+        '\n' +
+        '1..1\n' +
+        '# tests 1\n' +
+        '# pass  1\n' +
+        '\n' +
+        '# ok\n',
+        'Valid tap output for swagger file')
     }))
 
   // Test swagger file in yaml format
@@ -155,17 +155,17 @@ test('Swagger & JS tests should output valid tap & xunit output', function (t) {
     .pipe(concat(function (r) {
       var body = r.toString('utf8')
       t.equal(
-          body,
-          'TAP version 13\n' +
-          '# Parse file ./test/fixtures/swagger.yaml\n' +
-          'ok 1 Valid swagger file\n' +
-          '\n' +
-          '1..1\n' +
-          '# tests 1\n' +
-          '# pass  1\n' +
-          '\n' +
-          '# ok\n'
-        , 'Valid tap output for swagger file')
+        body,
+        'TAP version 13\n' +
+        '# Parse file ./test/fixtures/swagger.yaml\n' +
+        'ok 1 Valid swagger file\n' +
+        '\n' +
+        '1..1\n' +
+        '# tests 1\n' +
+        '# pass  1\n' +
+        '\n' +
+        '# ok\n',
+        'Valid tap output for swagger file')
     }))
 
   output
@@ -178,14 +178,14 @@ test('Swagger & JS tests should output valid tap & xunit output', function (t) {
     .pipe(concat(function (r) {
       var body = r.toString('utf8')
       t.equal(
-          body,
-          '<?xml version="1.0"?>\n' +
-          '<testsuites>\n' +
-          '  <testsuite tests="1" failures="0" errors="0" name="Parse file ./test/fixtures/swagger.json">\n' +
-          '    <testcase name="#1 Valid swagger file"/>\n' +
-          '  </testsuite>\n' +
-          '</testsuites>\n'
-        , 'Valid xunit output for swagger file')
+        body,
+        '<?xml version="1.0"?>\n' +
+        '<testsuites>\n' +
+        '  <testsuite tests="1" failures="0" errors="0" name="Parse file ./test/fixtures/swagger.json">\n' +
+        '    <testcase name="#1 Valid swagger file"/>\n' +
+        '  </testsuite>\n' +
+        '</testsuites>\n',
+        'Valid xunit output for swagger file')
     }))
 
   output
@@ -193,17 +193,17 @@ test('Swagger & JS tests should output valid tap & xunit output', function (t) {
     .pipe(concat(function (r) {
       var body = r.toString('utf8')
       t.equal(
-          body,
-          'TAP version 13\n' +
-          '# it should return ok\n' +
-          'ok 1 looking good\n' +
-          '\n' +
-          '1..1\n' +
-          '# tests 1\n' +
-          '# pass  1\n' +
-          '\n' +
-          '# ok\n'
-      , 'Valid tap output')
+        body,
+        'TAP version 13\n' +
+        '# it should return ok\n' +
+        'ok 1 looking good\n' +
+        '\n' +
+        '1..1\n' +
+        '# tests 1\n' +
+        '# pass  1\n' +
+        '\n' +
+        '# ok\n',
+        'Valid tap output')
     }))
 
   output
@@ -215,14 +215,14 @@ test('Swagger & JS tests should output valid tap & xunit output', function (t) {
     .pipe(concat(function (r) {
       var body = r.toString('utf8')
       t.equal(
-          body,
-            '<?xml version="1.0"?>\n' +
-            '<testsuites>\n' +
-            '  <testsuite tests="1" failures="0" errors="0" name="it should return ok">\n' +
-            '    <testcase name="#1 looking good"/>\n' +
-            '  </testsuite>\n' +
-            '</testsuites>\n'
-       , 'Valid xunit output')
+        body,
+        '<?xml version="1.0"?>\n' +
+        '<testsuites>\n' +
+        '  <testsuite tests="1" failures="0" errors="0" name="it should return ok">\n' +
+        '    <testcase name="#1 looking good"/>\n' +
+        '  </testsuite>\n' +
+        '</testsuites>\n',
+        'Valid xunit output')
     }))
 
   t.end()
