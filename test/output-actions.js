@@ -252,7 +252,7 @@ test('Invalid swagger should trigger a fail', function (t) {
     })
     .pipe(concat(function (r) {
       var body = r.toString('utf8')
-      t.equal(body.match(/is not a valid Swagger API definition/)[0], 'is not a valid Swagger API definition')
+      t.equal(body.match(/is not a valid Openapi API definition/)[0], 'is not a valid Openapi API definition')
     }))
 
   t.end()
